@@ -52,3 +52,19 @@ npm install -g typescript
 ```
 npx create-react-app my-app --template typescript
 ```
+## tsc 명령어 에러 날때
+
+1. Visual Studio Code 관리자 권한으로 실행
+
+2. terminal에 아래 순서대로 입력
+```
+$ Get-ExecutionPolicy
+```
+```
+$ Set-ExecutionPolicy RemoteSigned
+```
+※ Restricted에서 RemoteSigned로 변경
+
+Restricted : (제한된) 기본 실행 정책, 명령어 하나씩 실행 가능, 스크립트 파일을 로드하여 실행할 수 없음
+
+RemoteSigned : 로컬 컴퓨터에서 본인이 생성한 스크립트만 실행 가능, 인터넷에서 다운로드한 스크립트는 신뢰된 배포자에 의해 서명된 것만 실행할 수 있음
