@@ -4,3 +4,5 @@ const Calculator = (a:number ,b:number) => {
 }
 
 console.log(Calculator(1,2));
+
+export default Calculator;
