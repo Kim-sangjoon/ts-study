@@ -1,28 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Page001 from './components/pages/Page001';
+import React, { useState } from 'react';
+import Store from './Store';
+import {Address, Resturant} from './model/Resturant';
+import BestMenu from './BestMenu';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <div><Page001 /></div>
-    </div>
-  );
+let data:Resturant = {
+  name: '맛있는 식당',
+  category: 'western',
+  address: {
+    city: 'seoul',
+    detail: 'detailadd',
+    zipCode: 123456
+  },
+  menu:[
+    {name:"rose pasta", price: 2000, category: "PASTA"},
+    {name:"steak", price: 3000, category: "STEAK"}
+  ]
 }
 
-export default App;
+const App:React.FC = () => {
+  const [myResturant, setMyResturant] = useState<Resturant>(data);
+  const changeAddress = (address:Address) => {
+    setMyResturant({...myResturant, address:address})
+  }
+  return (
+    <div>
+      <Store info={myResturant} changeAddress={changeAddress} />
+      <BestMenu name="불고기피자" category="피자" price={1000} />
+
+    </div>
+  )
+}
+
+export default App
