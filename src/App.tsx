@@ -28,7 +28,7 @@ const App:React.FC = () => {
   return (
     <div>
       <Store info={myResturant} changeAddress={changeAddress} />
-      <BestMenu name="불고기피자" category="피자" price={1000} showBestMenuName={showBestMenuName}/>
+      <BestMenu name="불고기피자" category="피자" price={1000} showBestMenuName={showBestMenuName} comment='아주 맛있군요' />
     </div>
   )
 }
