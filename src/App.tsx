@@ -22,11 +22,13 @@ const App:React.FC = () => {
   const changeAddress = (address:Address) => {
     setMyResturant({...myResturant, address:address})
   }
+  const showBestMenuName = (name:string) => {
+    return name
+  }
   return (
     <div>
       <Store info={myResturant} changeAddress={changeAddress} />
-      <BestMenu name="불고기피자" category="피자" price={1000} />
-
+      <BestMenu name="불고기피자" category="피자" price={1000} showBestMenuName={showBestMenuName}/>
     </div>
   )
 }
