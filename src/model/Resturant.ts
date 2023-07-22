@@ -17,4 +17,14 @@ export type Menu = {
     category:string;
 };
 
-export type AddressWithoutZipCode = Omit<Address,'zipCode'>;
+export type AddressWithoutZipCode = Omit<Address,'zipCode'>
+export type RestaurantOnlyCategory = Pick<Resturant,'category'>
+
+export type ApiResponse<T> = {
+    data:T[],
+    totalPage:number,
+    page:number
+}
+
+export type RestaurantResponse = ApiResponse<Resturant>
+export type MenuResponse = ApiResponse<Menu>
