@@ -8,7 +8,11 @@ interface OwnProps {
 
 const Store:React.FC<OwnProps> = ({info}) => {
   return (
-    <div>{info.name}</div>
+    <div>
+      <div>{info.name}</div>
+      <div>{info.category}</div>
+      <div>{info.address.city}</div>
+    </div>
   )
 }
 
