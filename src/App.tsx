@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Store from './Store';
 import {Address, Resturant} from './model/Resturant';
 import BestMenu from './BestMenu';
+import Fprops from './Fprops';
 
 let data:Resturant = {
   name: '맛있는 식당',
